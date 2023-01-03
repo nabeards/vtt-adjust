@@ -20,16 +20,16 @@ module.exports = function readString(vtt) {
     });
   }
 
-  function move(cueId, newStartMs) {
+  function move(cueId, newStartMs, options = {}) {
     if (typeof cueId == 'object')
       cueId = cueId.id;
     var anchor = cp(data.cues[cueId]);
     anchor.start = newStartMs;
-    adjust.move(data.cues, anchor);
+    adjust.move(data.cues, anchor, options);
     visibleCues = calculateVisibleCues();
   }
-  
-  function moveAndScale(cueId1, newStartMs1, cueId2, newStartMs2) {
+
+  function moveAndScale(cueId1, newStartMs1, cueId2, newStartMs2, options = {}) {
     if (typeof cueId1 == 'object')
       cueId1 = cueId1.id;
     if (typeof cueId2 == 'object')
@@ -38,14 +38,14 @@ module.exports = function readString(vtt) {
     anchor.start = newStartMs1;
     var scaleRef = cp(data.cues[cueId2]);
     scaleRef.start = newStartMs2;
-    adjust.moveAndScale(data.cues, anchor, scaleRef);
+    adjust.moveAndScale(data.cues, anchor, scaleRef, options);
     visibleCues = calculateVisibleCues();
   }
 
   function toString() {
     return write(data);
   }
-  
+
   var adjuster = {
     cues: visibleCues,
     move: move,

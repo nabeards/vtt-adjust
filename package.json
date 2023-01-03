@@ -1,6 +1,6 @@
 {
   "name": "vtt-adjust",
-  "version": "1.1",
+  "version": "1.1.0",
   "description": "Move and scale all timecodes in a WebVTT file.",
   "main": "index.js",
   "directories": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/deestan/vtt-adjust.git"
+    "url": "https://github.com/nabeards/vtt-adjust.git"
   },
   "keywords": [
     "webvtt",
@@ -23,6 +23,7 @@
     "name": "Helge Skogly Holm",
     "email": "helge.holm@gmail.com"
   },
+  "contributors": ["Neil A. Beardsley"],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/deestan/vtt-adjust/issues"
